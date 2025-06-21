@@ -21,8 +21,8 @@ from valdi.config.settings import Config
 
 
 def _request_credentials():
-    access_key = input("Enter access key: ")
-    secret_key = getpass.getpass("Enter secret access key: ")
+    access_key = os.environ['VALDI_ACCESS_KEY']
+    secret_key = os.environ['VALDI_SECRET_KEY']
     return access_key, secret_key
 
 
