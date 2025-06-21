@@ -51,8 +51,8 @@ class Authenticator:
         hidden_dir = self.credentials_filepath.parent
         os.makedirs(hidden_dir, exist_ok=True)
 
-        self.user_email = input("Account email: ")
-        account_pass = getpass.getpass("Password: ")
+        self.user_email = os.environ['VALDI_EMAIL']
+        account_pass = os.environ['VALDI_PASS']
 
         response = requests.post(
             url=f"{Config.BASE_URL}/account/login",
